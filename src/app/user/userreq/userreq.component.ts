@@ -13,6 +13,7 @@ export class UserreqComponent implements OnInit {
   ngOnInit(): void {
     this.activeroute.params.subscribe(params=>{
       this.selectedDoctorId=params['id'];
+      console.log("test1234");
     });
   }
 
