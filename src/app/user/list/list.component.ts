@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.listService.getItems().subscribe((data: any) => {
       this.doctorList = data;
+      console.log("test");
     });
   }
 
