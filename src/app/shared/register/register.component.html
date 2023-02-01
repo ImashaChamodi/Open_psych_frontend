@@ -1,31 +1,5 @@
 <div class="container">
   <h2>User Registration Form</h2>
-  <!-- <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="sel1">Select User Type:</label>
-      <select class="form-control" id="sel1">
-        <option>Doctor</option>
-        <option>Patient</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name">
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-    <div class="form-group">
-      <label for="pwd2">Confirm Password:</label>
-      <input type="password" class="form-control" id="pwd2" placeholder="Confirm password">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form> -->
   <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
     <input formControlName="username" type="text" placeholder="Type Your name here">
     <div *ngIf="registerform.get('username')?.invalid  && registerform.get('username')?.touched">Username is required</div>
