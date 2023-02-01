@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="chat-container column" *ngFor="let chat of patientChatList">
+    <div class="chat-header">
+      <h3>{{chat.fromName}}</h3>
+    </div>
+    <div class="chat-messages">
+      <div *ngFor="let msg of chat.messageHistory">
+        {{msg.person}} : {{msg.message}}
+      </div>
+    </div>
+    <div class="chat-input">
+      <form [formGroup]="chatform" (ngSubmit)="onSubmit(chat.from)">
+        <input class="chat-textarea" type="text" formControlName="message">
+        <button type="submit" [disabled]="!chatform.valid">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

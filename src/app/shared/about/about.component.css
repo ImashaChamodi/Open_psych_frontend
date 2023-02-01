@@ -1,0 +1,25 @@
+
+
+  body {
+    background: linear-gradient(to right, #8c769e, #fc0542);
+    background-size: cover;
+    background-position: center;
+  }
+
+.about-section {
+  text-align: center;
+  padding: 100px;
+}
+
+.about-header {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+

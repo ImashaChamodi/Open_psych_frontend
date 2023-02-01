@@ -1,0 +1,9 @@
+<nav>
+  <a (click)="onClickHome()">Home</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/service">Services</a>
+  <a routerLink="/contact">Contact</a>
+  <div class="login-section">
+    <a (click)="onClickLogin()">{{userDetails.id?'Logout':'Login'}}</a>
+  </div>
+</nav>

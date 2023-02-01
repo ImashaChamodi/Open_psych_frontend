@@ -1,0 +1,16 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h3>Chat</h3>
+  </div>
+  <div class="chat-messages">
+    <div *ngFor="let msg of msgArray">
+      {{msg.person}} : {{msg.message}}
+    </div>
+  </div>
+  <div class="chat-input">
+    <form [formGroup]="chatform" (ngSubmit)="onSubmit()">
+      <input class="chat-textarea" type="text" formControlName="message">
+      <button type="submit" [disabled]="!chatform.valid">Send</button>
+    </form>
+  </div>
+</div>

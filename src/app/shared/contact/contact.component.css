@@ -1,0 +1,49 @@
+body {
+
+  background-size: cover;
+  background-position: center;
+}
+h2{text-align: center;
+  font-size: 3pc;
+color: rgb(8, 8, 8);}
+
+#contact {
+  padding: 140px 0;
+  text-align: center;
+  background: linear-gradient(to right, #8c769e, #fc0542);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.location, .phone, .email {
+  width: 30%;
+  padding: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #f03ac2, #46023a);
+  box-shadow: 0px 4px 4px rgba(233, 19, 55, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.location h3, .phone h3, .email h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.location p, .phone p, .email p {
+  color: rgb(248, 248, 248);
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.location i, .phone i, .email i {
+  font-size: 28px;
+  color: #7609db;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>User Registration Form</h2>
+  <!-- <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="sel1">Select User Type:</label>
+      <select class="form-control" id="sel1">
+        <option>Doctor</option>
+        <option>Patient</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for="pwd2">Confirm Password:</label>
+      <input type="password" class="form-control" id="pwd2" placeholder="Confirm password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form> -->
+  <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
+    <input formControlName="username" type="text" placeholder="Type Your name here">
+    <div *ngIf="registerform.get('username')?.invalid  && registerform.get('username')?.touched">Username is required</div>
+    <input formControlName="email" type="email" placeholder="Type your Email here">
+    <div *ngIf="registerform.get('email')?.invalid  && registerform.get('email')?.touched">Email is required</div>
+    <input formControlName="password" type="password" placeholder="Enter your Password">
+    <div *ngIf="registerform.get('password')?.invalid  && registerform.get('password')?.touched">Password is required</div>
+    <select formControlName="usertype">
+      <option value="">Select user type</option>
+      <option *ngFor="let types of userTypes" [value]="types.value">{{types.label}}</option>
+    </select>
+    <div *ngIf="registerform.get('usertype')?.invalid  && registerform.get('usertype')?.touched">Usertype is required</div>
+    <button type="submit" class="btn btn-default" [disabled]="!registerform.valid">Register</button>
+
+  </form>
+</div>

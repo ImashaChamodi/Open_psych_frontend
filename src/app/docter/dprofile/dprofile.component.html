@@ -1,0 +1,60 @@
+<!-- <div class="form-group">
+  <label for="profile-pic">Profile Picture:</label>
+  <input type="file" id="profile-pic" name="profile-pic" class="form-control" accept="image/*">
+</div>
+
+<div class="form-group">
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+  </div>
+  <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+  </div>
+  <div class="form-group">
+      <label for="telephone">Telephone:</label>
+      <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Your Telephone">
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input type="text" class="form-control" id="mobile" >
+  </div>
+  <div class="form-group">
+      <label for="Adress">Adress:</label>
+      <textarea id="adress" name="adress" class="form-control" ></textarea>
+  </div>
+
+<div class="form-group">
+  <label for="states">Working States</label>
+  <input type="text" class="form-control" id="states" >
+</div>
+<div class="form-group">
+  <label for="specialized_areas">Specialized Areas</label>
+  <input type="text" class="form-control" id="specialized_areas" >
+</div> -->
+
+
+<!--<button (click)="save()" class="btn btn-success">Save</button>
+<button (click)="edit()" class="btn btn-warning">Edit</button>-->
+<form [formGroup]="profileform" (ngSubmit)="onSave()">
+  <input formControlName="name" type="text" placeholder="Type your name here">
+  <div *ngIf="profileform.get('name')?.invalid  && profileform.get('name')?.touched">Name is required</div>
+  <input formControlName="email" type="email" placeholder="Type your Email here">
+  <div *ngIf="profileform.get('email')?.invalid  && profileform.get('email')?.touched">Email is required</div>
+  <input formControlName="telephone" type="text" placeholder="Enter your telephone number here">
+  <div *ngIf="profileform.get('telephone')?.invalid  && profileform.get('telephone')?.touched">Email is required</div>
+  <select formControlName="workingstatus">
+    <option value="">Select working status</option>
+    <option *ngFor="let status of workstatus" [value]="status.value">{{status.label}}</option>
+  </select>
+  <select formControlName="specializedarea">
+    <option value="">Select user type</option>
+    <option *ngFor="let special of specialties" [value]="special.value">{{special.label}}</option>
+  </select>
+  <div *ngIf="profileform.get('specializedarea')?.invalid  && profileform.get('specializedarea')?.touched">Specializedarea is required</div>
+  <button type="submit" class="btn btn-default"[disabled]="!profileform.valid" >{{editmode?'Update':'Save'}}</button>
+  <!-- <button type="submit" class="btn btn-default" [disabled]="!profileform.valid">Register</button> -->
+</form>
+
+
